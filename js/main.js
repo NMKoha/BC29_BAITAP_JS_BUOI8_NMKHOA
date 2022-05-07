@@ -86,11 +86,20 @@ document.querySelector("#btnBaiTap").onclick = function() {
 
         for (var c = 0; c < arrSo.length; c++) {
             for (var d = 0; d <= arrSo.length; d++) {
-                if (arrSo[d] > arrSo[(d + 1)]) {
-                    var e = arrSo[d];
-                    arrSo[(d)] = arrSo[d + 1];
-                    arrSo[d + 1] = e;
+                if (arrSo[d] < 0 && arrSo[d + 1] < 0) {
+                    if (arrSo[d] < arrSo[(d + 1)]) {
+                        var e = arrSo[d];
+                        arrSo[(d)] = arrSo[d + 1];
+                        arrSo[d + 1] = e;
+                    }
+                } else {
+                    if (arrSo[d] > arrSo[(d + 1)]) {
+                        var e = arrSo[d];
+                        arrSo[(d)] = arrSo[d + 1];
+                        arrSo[d + 1] = e;
+                    }
                 }
+
             }
         }
 
